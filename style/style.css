@@ -1,0 +1,26 @@
+body{
+	font-family: Helvetica, san-serif;
+}
+
+h1{
+	color:white;
+}
+
+a:link{
+	color:white;
+}
+
+ul.bubbles li.ui-li, ul.bubbles li.ui-li.ui-first-child, ul.bubbles li.ui-li.ui-last-child{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	margin:10px;
+}
+
+ul.bubbles li.ui-btn-up-a{
+	border: none;
+}
