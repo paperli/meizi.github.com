@@ -19,8 +19,67 @@ ul.bubbles li.ui-li, ul.bubbles li.ui-li.ui-first-child, ul.bubbles li.ui-li.ui-
 	border-bottom-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	margin:10px;
+	border:none;
+	padding-top:10px;
+	background:url(../images/talk.png) no-repeat 20px 0px;
 }
 
-ul.bubbles li.ui-btn-up-a{
-	border: none;
+ul.bubbles>li.ui-li>.ui-btn-inner{
+	background:rgba(255,255,255,0.75);
+	border:1px solid rgb(233,233,233);
+	padding:10px;
+}
+
+ul.bubbles>.ui-btn-down-a{
+	border:none;
+	background:none;
+}
+
+ul.bubbles>.ui-btn-down-a>.ui-btn-inner, ul.bubbles>li.ui-li>.ui-btn-inner:active{
+	background:rgba(200,200,200,0.3);
+}
+
+a.action_btn{
+	border:none;
+	background:none;
+}
+
+a.action_btn>.ui-btn-inner{
+	background:none;
+	border:0;
+	padding:0;
+	margin:0;
+}
+
+a.action_btn:active{
+	opacity:0.5;
+}
+
+ul.bubbles .ui-li-thumb{
+	margin:0;
+	border-radius:10px;
+	max-width:70px;
+	max-height:70px;
+	border:none;
+	background:rgba(130,130,130,0.7);
+	padding:2px;
+}
+
+ul.bubbles .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, ul.bubbles  .ui-li-static.ui-li-has-thumb{
+	min-height:53px;
+}
+
+.ui-li-desc{
+	font-size:1em;
+	color:rgb(170,170,170);
+}
+
+.member_info{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding-left:20px;
+	padding-right:20px;
+	margin:-5px -5px 25px -5px;
 }
