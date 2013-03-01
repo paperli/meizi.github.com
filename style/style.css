@@ -75,11 +75,24 @@ ul.bubbles .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, ul.bubbles  .ui-li-
 }
 
 .member_info{
+	position:relative;
+	min-height:70px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	padding-left:20px;
-	padding-right:20px;
+	padding:10px;
 	margin:-5px -5px 25px -5px;
+}
+
+.member_info>img{
+	float:left;
+	max-width:70px;
+	border-radius:10px;
+}
+
+.member_info>h2{
+	font-size:1.4em;
+	padding-top:8px;
+	padding-left:20px;
 }
