@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>MEIZI</title>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icon72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icon114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icon144.png" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+	<link rel="stylesheet" href="style/meizi.css" />
+	<link rel="stylesheet" href="style/style.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	<script src="src/jquery.easing.1.3.js"></script>
+	<script src="src/QTransform.js"></script>
+	<script src="src/code.js"></script>
+	
+</head>	
+	
+<body>
+	<div id="fb-root" style="width:100%; height:300px; background:#cc0022;"></div>
+	<script>
+	  // Additional JS functions here
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '151684361518791', // App ID
+	      channelUrl : '//localhost/~paper/meizi.github.com/channel.html', // Channel File
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+
+	    // Additional init code here
+		FB.getLoginStatus(function(response) {
+		  if (response.status === 'connected') {
+		    // connected
+			console.log("connected to fb");
+		  } else if (response.status === 'not_authorized') {
+		    // not_authorized
+			console.log("not authorized in fb");
+			login();
+		  } else {
+		    // not_logged_in
+			console.log("not logged in fb");
+			login();
+		  }
+		 });
+	  };
+	  
+	  function login() {
+		  console.log("[2]running login");
+	      FB.login(function(response) {
+	          console.log("[2]running login 2");
+			  if (response.authResponse) {
+	              // connected
+				  console.log("[2]connected to fb");
+	          } else {
+	              // cancelled
+				  console.log("[2]cancelled login");
+	          }
+	      });
+		  console.log("[2]running login 3");
+	  }
+	  
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	   
+	   
+	</script>
+</body>
+</html>

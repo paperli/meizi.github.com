@@ -7,4 +7,6 @@
 			scale:1
 		},500,"easeOutBounce");
 	});
+	$("div#fb_login").hide();
+	
 })();

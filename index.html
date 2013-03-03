@@ -22,6 +22,63 @@
 </head>	
 	
 <body>
+	<div id="fb-root"></div>
+	<script>
+	  // Additional JS functions here
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '151684361518791', // App ID
+	      channelUrl : 'channel.html', // Channel File
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+
+	    // Additional init code here
+		FB.getLoginStatus(function(response) {
+		  if (response.status === 'connected') {
+		    // connected
+			console.log("connected to fb");
+		  } else if (response.status === 'not_authorized') {
+		    // not_authorized
+			console.log("not authorized in fb");
+			$("div#fb_login").show();
+			$("a#fb_login_btn").click(login);
+			//login();
+		  } else {
+		    // not_logged_in
+			console.log("not logged in fb");
+			$("div#fb_login").show();
+			$("a#fb_login_btn").click(login);
+			//login();
+		  }
+		 });
+	  };
+	  
+	  function login() {
+		  console.log("[2]running login");
+	      FB.login(function(response) {
+	          console.log("[2]running login 2");
+			  if (response.authResponse) {
+	              // connected
+				  console.log("[2]connected to fb");
+	          } else {
+	              // cancelled
+				  console.log("[2]cancelled login");
+	          }
+	      });
+		  console.log("[2]running login 3");
+	  }
+	  
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	</script>
 	<div data-role="page" id="main" data-theme="a" data-dom-cache="true">
 		<div data-role="panel" id="mypanel" data-display="push">
 			<a href="#mypanel" data-role="button">Close</a>
@@ -32,6 +89,7 @@
 		</div>
 		
 		<div data-role="content">
+			
 			<div class="ui-bar-a member_info"><img src="images/default-avatar.png" />
 					<h2 class="ui-li-heading">Old John</h2></div>
 			
@@ -44,6 +102,9 @@
 				<li><a href="#msg1" data-transition="slide"><img src="images/shop_thumb.png" /><p>I'm around Meizi. 200m</p></a><a href="#purchase" data-rel="popup" data-transition="pop" data-position-to="window" class="action_btn">Purchase</a></li>
 				<li><a href="#msg1" data-transition="slide"><img src="images/shop_thumb.png" /><p>I'm around Meizi. 200m</p></a><a href="#purchase" data-rel="popup" data-transition="pop" data-position-to="window" class="action_btn">Purchase</a></li>
 			</ul>
+			
+			<div id="fb_login"><a id="fb_login_btn" href="#">FACEBOOK LOGIN</a></div>
+			
 			<div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="a" class="ui-content" style="max-width:240px; padding-bottom:2em;">
 			    <h3>Purchase Album?</h3>
 			    <p>Your download will begin immediately on your mobile device when you purchase.</p>
