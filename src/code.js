@@ -9,6 +9,9 @@ var biz = {};
 		
 		$("img#cover_img").load(function(){
 			stackBlurImage("cover_img","cover_canvas",20,false);
+			$(".member_info #cover_canvas").css("top",($(".member_info").height()-$(".member_info #cover_canvas").height())/2);
+			
+			console.log($(".member_info #cover_canvas").css("top"));
 		});
 		
 		//load fb me profile
