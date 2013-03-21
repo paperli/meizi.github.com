@@ -3,21 +3,26 @@ var me = {name:"David Wang", pic:"images/default-avatar.png"};
 		  
 var biz = {};
 
-(function(){
+$(function(){
 	
 	$("#main").live("pageinit",function(){
 		
-		$("img#cover_img").load(function(){
+		
+		//alert("init");
+		var cover_img_url = "images/cover.jpg";
+		$("<img />").attr("src",cover_img_url).appendTo("#storage").load(function(){
+			//alert("img loaded");
 			stackBlurImage("cover_img","cover_canvas",20,false);
 			$(".member_info #cover_canvas").css("top",($(".member_info").height()-$(".member_info #cover_canvas").height())/2);
 			
-			console.log($(".member_info #cover_canvas").css("top"));
+			//console.log($(".member_info #cover_canvas").css("top"));
 		});
 		
 		//load fb me profile
 		//alert("My name is " + me.name + "/nMy Profile Picture: "+ me.pic);
 		$("#me_name").html(me.name);
-		$("img#me_pic").attr("src",me.pic);
+		//console.log("h: "+$(".member_info").outerHeight());
+		$("div#me_pic").css("background-image","url("+me.pic+")").css("top",($(".member_info").height()-$(".member_info div#me_pic").height())/2);
 		
 		//load fb group feed
 		
@@ -40,7 +45,7 @@ var biz = {};
 	});
 	//$("div#fb_login").hide();
 	
-})();
+});
 
 function getDistance(c1,c2){
 	var R = 6371;

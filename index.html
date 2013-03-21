@@ -64,11 +64,12 @@
 	  //var temp = {};
 	  function getMeProfile(){
 		//temp = {name:"..",pic:".."};
-		FB.api('/me?fields=name,picture.type(square)', function(response) {
+		FB.api('/me?fields=name,picture.width(160).height(160)', function(response) {
 			me.name = response.name;
 			me.pic = response.picture.data.url;
 			$("#me_name").html(me.name);
-			$("img#me_pic").attr("src",me.pic);
+			$("div#me_pic").css("background-image","url("+me.pic+")");
+			//$("img#me_pic").attr("src",me.pic);
 		  //alert('Your name is ' + response.name + '\nPic: '+response.picture.data.url);
 		  $.mobile.changePage("#main");
   		});
@@ -126,7 +127,7 @@
 			
 			<div class="ui-bar-a member_info">
 				<canvas id="cover_canvas">Your Browser Sucks!</canvas>
-				<img id="me_pic" src="images/default-avatar.png" />
+				<div id="me_pic"></div>
 				<h2 class="ui-li-heading" id="me_name">Old John</h2>
 			</div>
 			
@@ -147,8 +148,6 @@
 			    <a href="index.html" data-role="button" data-rel="back" data-inline="true" data-mini="true">Cancel</a>
 			</div>
 		</div>
-		
-		<div data-role="footer" data-position="fixed">I am not here</div>
 	</div>
 	
 	<div data-role="page" id="msg1" data-add-back-btn="true" data-theme="a" data-dom-cache="true">
