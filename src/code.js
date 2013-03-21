@@ -6,6 +6,11 @@ var biz = {};
 (function(){
 	
 	$("#main").live("pageinit",function(){
+		
+		$("img#cover_img").load(function(){
+			stackBlurImage("cover_img","cover_canvas",20,false);
+		});
+		
 		//load fb me profile
 		//alert("My name is " + me.name + "/nMy Profile Picture: "+ me.pic);
 		$("#me_name").html(me.name);

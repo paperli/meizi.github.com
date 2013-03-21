@@ -17,6 +17,7 @@
 	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 	<script src="src/jquery.easing.1.3.js"></script>
 	<script src="src/QTransform.js"></script>
+	<script src="src/StackBlur.js"></script>
 	<script src="src/code.js"></script>
 	
 </head>	
@@ -123,14 +124,21 @@
 		
 		<div data-role="content">
 			
-			<div class="ui-bar-a member_info"><img id="me_pic" src="images/default-avatar.png" />
-					<h2 class="ui-li-heading" id="me_name">Old John</h2></div>
+			<div class="ui-bar-a member_info">
+				<canvas id="cover_canvas">Your Browser Sucks!</canvas>
+				<img id="me_pic" src="images/default-avatar.png" />
+				<h2 class="ui-li-heading" id="me_name">Old John</h2>
+			</div>
 			
 			<ul data-role="listview" data-inset="false" class="bubbles" data-split-theme="a">
 				<li><a href="#msg1" data-transition="slide"><img src="images/map_thumb.png" /><p>I'm around</p><h2>Meizi Sanchong</h2></a><a href="#purchase" data-rel="popup" data-transition="pop" data-position-to="window" class="action_btn">Purchase</a></li>
 				<li><a href="#msg2">say something...</a></li>
 				
 			</ul>
+			
+			<div id="storage">
+				<img class="resource" id="cover_img" src="images/cover.jpg" />
+			</div>
 			
 			<div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="a" class="ui-content" style="max-width:240px; padding-bottom:2em;">
 			    <h3>Purchase Album?</h3>

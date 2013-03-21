@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>MEIZI</title>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icon72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icon114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icon144.png" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="src/StackBlur.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#blur_val").val($("#blur_bar").val());
+		$("#cover_a").load(function(){
+			//console.log($("#cover_a").width());
+			stackBlurImage("cover_a","cover_canvas",parseInt($("#blur_bar").val(),10),true);
+			$("#blur_bar").change(function(){
+				$("#blur_val").val($("#blur_bar").val());
+				stackBlurImage("cover_a","cover_canvas",parseInt($("#blur_bar").val(),10),true);
+			});
+		});
+	});
+	
+	</script>
+	<style>
+	img.resource{
+		display:none;
+	}
+	
+	canvas#cover_canvas{
+		width:400px;
+		height:200px;
+	}
+	</style>
+</head>	
+	
+<body>
+	<canvas id="cover_canvas" width="400px" height="200px">Your Browser Sucks!</canvas>
+	<div id="cover_container"><img class="resource" id="cover_a" src="http://paper-lide-imac.local/~paper/meizi.github.com/images/cover.jpg" /></div>
+	<input id="blur_bar" type="range" value=2 min=1 max=100 /> <input id="blur_val" type="text" value="50" />
+</body>
+</html>
