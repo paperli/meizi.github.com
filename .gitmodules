@@ -1,0 +1,3 @@
+[submodule "src/curls"]
+	path = src/curls
+	url = git@github.com:elliottkember/the-sexy-curls-jquery-plugin.git
