@@ -13,7 +13,7 @@ $(function(){
 		$("<img />").attr("src",cover_img_url).appendTo("#storage").load(function(){
 			//alert("img loaded");
 			stackBlurImage("cover_img","cover_canvas",20,false);
-			$(".member_info #cover_canvas").css("top",($(".member_info").height()-$(".member_info #cover_canvas").height())/2);
+			$(".member_info #cover_canvas").css("top",($(".member_info div.info_wall").height()-$(".member_info div.curving_shadow").height()-$(".member_info #cover_canvas").height())/2);
 			
 			//console.log($(".member_info #cover_canvas").css("top"));
 		});
