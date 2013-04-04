@@ -27,15 +27,23 @@ $(function(){
 		//load fb group feed
 		
 		//bubble_count = $("ul.bubbles li").length;
+		//document.getElementById("sound_bubble").play();
+		//alert($("ul.bubbles li").length);
 		jQuery.each($("ul.bubbles li"),function(i,v){
 			//console.log("#"+i+": "+v);
-			$(v).animate({opacity:0,scaleY:0.1},0).delay(300+500*i).animate({
+			setTimeout(function(){
+				document.getElementById("sound_bubble").play();
+			},300+1000*parseInt(i,10));
+			//TODO: Refine the dound play mechanism. The interval is too short to replay currently.
+			
+			$(v).animate({opacity:0,scaleY:0.1},0).delay(300+1000*parseInt(i,10)).animate({
 			opacity:[1,'easeInCirc'],
 			transformOriginX:'50%',
 			transformOriginY:'0%',
 			scaleY:1
-		},500,"easeOutCirc");
+		},1000,"easeOutCirc");
 		});
+		
 		/*$("ul.bubbles li").animate({opacity:0,scale:0.1},0).delay(500).animate({
 			opacity:1,
 			transformOriginX:'50%',
