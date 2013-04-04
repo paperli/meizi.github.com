@@ -33,15 +33,34 @@ $(function(){
 			//console.log("#"+i+": "+v);
 			setTimeout(function(){
 				document.getElementById("sound_bubble").play();
-			},300+1000*parseInt(i,10));
+			},300+800*parseInt(i,10));
 			//TODO: Refine the dound play mechanism. The interval is too short to replay currently.
 			
-			$(v).animate({opacity:0,scaleY:0.1},0).delay(300+1000*parseInt(i,10)).animate({
+			/* //Talk in css
+			talk = $("<div></div>").addClass("talk");
+			if (i%2 == 0){
+				//odd
+				talk.css('left',20);
+			} else{
+				//even
+				talk.css('right',20);
+			}
+			$(v).append(talk);*/
+			//smoother listing animation
+			if (i%2 == 0){
+				//odd
+				$(v).css("backgroundPosition","60px 0px");
+			} else{
+				//even
+				$(v).css("backgroundPosition","260px 0px");
+			}
+			$(v).animate({opacity:0,scale:0.1,translateY:0},0).delay(800*parseInt(i,10)).animate({
 			opacity:[1,'easeInCirc'],
+			translateY:0,
 			transformOriginX:'50%',
-			transformOriginY:'0%',
-			scaleY:1
-		},1000,"easeOutCirc");
+			transformOriginY:'50%',
+			scale:1
+		},500,"easeOutBounce");
 		});
 		
 		/*$("ul.bubbles li").animate({opacity:0,scale:0.1},0).delay(500).animate({
