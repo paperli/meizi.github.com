@@ -31,9 +31,9 @@ $(function(){
 		//alert($("ul.bubbles li").length);
 		jQuery.each($("ul.bubbles li"),function(i,v){
 			//console.log("#"+i+": "+v);
-			setTimeout(function(){
+			/*setTimeout(function(){
 				document.getElementById("sound_bubble").play();
-			},300+800*parseInt(i,10));
+			},300+800*parseInt(i,10));*/
 			//TODO: Refine the dound play mechanism. The interval is too short to replay currently.
 			
 			/* //Talk in css
@@ -52,15 +52,16 @@ $(function(){
 				$(v).css("backgroundPosition","60px 0px");
 			} else{
 				//even
-				$(v).css("backgroundPosition","260px 0px");
+				$(v).css("backgroundPosition","260px 0px").addClass("even");
 			}
-			$(v).animate({opacity:0,scale:0.1,translateY:0},0).delay(800*parseInt(i,10)).animate({
-			opacity:[1,'easeInCirc'],
-			translateY:0,
-			transformOriginX:'50%',
-			transformOriginY:'50%',
-			scale:1
-		},500,"easeOutBounce");
+			$(v).animate({opacity:0,scale:1,translateY:400},0).delay(200*parseInt(i,10)).animate({
+				opacity:[1,'easeInCubic'],
+				translateY:0,
+				transformOriginX:'50%',
+				transformOriginY:'50%',
+				scale:1
+			},300,"swing");
+			
 		});
 		
 		/*$("ul.bubbles li").animate({opacity:0,scale:0.1},0).delay(500).animate({

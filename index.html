@@ -115,11 +115,18 @@
 	
 	<!-- Main Flow -->
 	<div data-role="page" id="main" data-theme="a" data-dom-cache="true">
-		<div data-role="panel" id="mypanel" data-display="push">
-			<a href="#mypanel" data-role="button">Close</a>
+		<div data-role="panel" id="mypanel" data-position-fixed="true" class="filter_panel" data-display="push">
+			<ul data-role="listview" data-inset="false" data-split-theme="a">
+				<li data-icon="edit"><a href="#mypanel"></a></li>
+				<li data-icon="grid"><a href="#mypanel"></a></li>
+				<li data-icon="star"><a href="#mypanel"></a></li>
+				<li data-icon="info"><a href="#mypanel"></a></li>
+				<li data-icon="home"><a href="#mypanel"></a></li>
+			</ul>
 		</div>
 		
 		<div data-role="header" data-position="fixed">
+			<a href="#mypanel" data-iconpos="notext" data-icon="bars" data-theme="a"> </a>
 			<h1>Meizi Breakfast</h1>
 		</div>
 		

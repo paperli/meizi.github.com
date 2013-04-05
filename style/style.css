@@ -22,6 +22,51 @@ body{
 	border:none;
 }
 
+#mypanel .ui-li > .ui-btn-inner{
+	height:50px;
+}
+
+#mypanel .ui-btn-icon-right .ui-icon{
+	right:16px;
+}
+
+/* START: sliding pabel customization */
+.ui-panel{
+	width:50px;
+}
+
+.ui-panel-position-left{
+	left:-50px;
+}
+
+.ui-panel-animate.ui-panel-position-left.ui-panel-display-overlay,
+.ui-panel-animate.ui-panel-position-left.ui-panel-display-push{
+	left: 0;
+	-webkit-transform: translate3d(-50px,0,0);
+	-moz-transform: translate3d(-50px,0,0);
+	transform: translate3d(-50px,0,0);
+}
+
+.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open,
+.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open,
+.ui-panel-dismiss-position-left.ui-panel-dismiss-open {
+	left: 50px;
+	right: -50px;
+}
+
+.ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal,
+.ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push,
+.ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal,
+.ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
+	left: 0;
+	right: 0;
+	-webkit-transform: translate3d(50px,0,0);
+	-moz-transform: translate3d(50px,0,0);
+	transform: translate3d(50px,0,0);
+}
+
+/* END: sliding pabel customization */
+
 a#fb_login_btn{
 	background:#3661A0;
 	border-radius:4px;
@@ -67,6 +112,7 @@ a:link{
 
 #bubbles{
 	margin:0;
+	overflow:hidden;
 }
 
 ul.bubbles li.ui-li, ul.bubbles li.ui-li.ui-first-child, ul.bubbles li.ui-li.ui-last-child{
@@ -80,9 +126,13 @@ ul.bubbles li.ui-li, ul.bubbles li.ui-li.ui-first-child, ul.bubbles li.ui-li.ui-
 }
 
 ul.bubbles>li.ui-li>.ui-btn-inner{
-	background:rgba(255,255,255,1);
+	background:#f6feff;
 	padding:10px;
+	
+}
 
+ul.bubbles>li.ui-li.even>.ui-btn-inner{
+	background:#FDF5F5;
 }
 
 ul.bubbles>.ui-btn-down-a{
